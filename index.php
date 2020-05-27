@@ -22,6 +22,36 @@
 
 <body>
     <?php require('./menu.php'); ?>
+    <?php
+        $conn = mysqli_connect('localhost', 'root', '', 'nhom13');
+        $result = mysqli_query($conn, 'select * from hang');
+    ?>
+
+<div class="container">
+                <div class="row">
+                    <?php
+
+                    while ($row = mysqli_fetch_assoc($result)) {
+                    ?>
+
+                        <div class="col-md-3 text-center mb-3">
+                            <div class="card mb-5">
+                                <img style="height: 150px; width: auto" class="card-img-top mx-auto" src="<?php echo $row['image'] ?>" alt="">
+                                <div class="card-body">
+                                    <p class="card-title"><?php echo $row['name'] ?></p>
+                                    <p class="card-text">Giá: <?php echo $row['price'] ?> $</p>
+                                    <button class="btn btn-primary">Mua Hàng</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    <?php
+                    }
+                    require('./sql_close.php');
+                    ?>
+                </div>
+            </div>
+
     <?php require('./footer.php'); ?>
 </body>
 

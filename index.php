@@ -23,7 +23,7 @@
 <body>
     <?php require('./menu.php'); ?>
     <?php
-        $conn = mysqli_connect('localhost', 'root', '', 'nhom13');
+        require('./sql_connect.php');
         $result = mysqli_query($conn, 'select * from hang');
     ?>
 

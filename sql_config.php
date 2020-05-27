@@ -2,4 +2,4 @@
 const HOST = "localhost";
 const USERNAME = "root";
 const PASSWORD = "";
-const DATABASE = "quanlybanhang";
+const DATABASE = "nhom13";

@@ -30,7 +30,7 @@
 
         <div class="container mt-5">
             <?php
-            $conn = mysqli_connect('localhost', 'root', '', 'nhom13');
+            require('./sql_connect.php');
             if (isset($_POST['search'])) {
                 $search = $_POST['searchtxt'];
                 $sql_search = "select * from hang where name LIKE '%$search%' ";
